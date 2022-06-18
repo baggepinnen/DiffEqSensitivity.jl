@@ -496,7 +496,7 @@ function _vecjacobian!(dλ, y, λ, p, t, S::TS, isautojacvec::ZygoteVJP, dgrad, 
       (dλ[:] .= vec(tmp1))
     end
 
-    if dy === nothing && (dy[:] .= vec(_dy))
+    dy === nothing && (dy[:] .= vec(_dy))
 
     if dgrad !== nothing 
       if tmp2 === nothing && !ALLOW_ZYGOTEVJP_NOTHING[] 
